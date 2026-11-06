@@ -39,6 +39,20 @@ td.say, th.say { text-align: right; }
 .zolaq { background: var(--acik); border-radius: 4px; height: 12px; min-width: 160px; }
 .zolaq i { display: block; height: 12px; border-radius: 4px; background: var(--ana); }
 
+.ust { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.istifadeci { font-size: 14px; color: #dbe4f3; white-space: nowrap; }
+.istifadeci a { color: #fff; margin-left: 12px; }
+
+.giris-sehife { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--acik); padding: 16px; }
+.giris-kart { width: 100%; max-width: 380px; background: #fff; border: 1px solid var(--xett); border-radius: 10px; padding: 28px 24px; }
+.giris-kart h1 { margin: 0; font-size: 24px; color: var(--ana); }
+.giris-kart p { margin: 4px 0 18px; color: var(--sonuk); }
+.giris-kart label { display: block; margin-bottom: 12px; font-size: 14px; }
+.giris-kart input { width: 100%; min-width: 0; margin-top: 4px; }
+.giris-kart button { width: 100%; padding: 10px; font: inherit; font-weight: 600; color: #fff; background: var(--ana); border: 0; border-radius: 6px; cursor: pointer; }
+.giris-kart button:hover { background: #17304f; }
+.giris-kart .demo { margin: 14px 0 0; font-size: 13px; color: var(--sonuk); text-align: center; }
+
 .yuk { margin: 0; padding: 14px; color: var(--sonuk); }
 .xeta-qeyd { background: #fde8e8; border-color: #f0b4b4; color: #a12a2a; }
 ul.linkler { padding-left: 18px; }
