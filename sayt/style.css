@@ -53,6 +53,11 @@ td.say, th.say { text-align: right; }
 .giris-kart button:hover { background: #17304f; }
 .giris-kart .demo { margin: 14px 0 0; font-size: 13px; color: var(--sonuk); text-align: center; }
 
+.jurnal { border: 1px solid var(--xett); border-radius: 8px; margin-bottom: 10px; padding: 10px 14px; background: #fff; }
+.jurnal summary { cursor: pointer; }
+.jurnal ul { margin: 10px 0 4px; padding-left: 20px; font-size: 14px; }
+.jurnal li { margin: 2px 0; }
+
 .yuk { margin: 0; padding: 14px; color: var(--sonuk); }
 .xeta-qeyd { background: #fde8e8; border-color: #f0b4b4; color: #a12a2a; }
 ul.linkler { padding-left: 18px; }

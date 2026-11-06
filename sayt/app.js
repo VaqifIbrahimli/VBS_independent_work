@@ -31,6 +31,8 @@ async function getData(ad) {
         saySorgu("terminal"), saySorgu("terminal", "&status_id=eq.1"), saySorgu("emeliyyat"), saySorgu("isci"), saySorgu("avtomobil")]);
       return { terminal, aktiv, emeliyyat, isci, avtomobil };
     }
+    case "bot":
+      return oxu("bot_jurnal?select=gun,vaxt,xulase,detallar&order=id.desc&limit=30");
     case "aylar":
       return funksiya("sayt_aylar");
     case "kateqoriya":
@@ -76,6 +78,7 @@ window.addEventListener("unhandledrejection", (h) => {
   document.querySelectorAll(".yuk").forEach((e) => (e.textContent = ""));
 });
 
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const pul = (n) => Number(n).toLocaleString("az", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " ₼";
 const eded = (n) => Number(n).toLocaleString("az");
 

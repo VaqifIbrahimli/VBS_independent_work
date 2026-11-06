@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bot jurnalı | Tezöde Holding</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="giris.js"></script>
+</head>
+<body>
+  <header>
+    <div class="bas">
+      <div class="ust">
+        <h1>Tezöde Holding</h1>
+        <div class="istifadeci"><span id="istAd"></span><a href="login.html" id="cixis">Çıxış</a></div>
+      </div>
+      <nav>
+        <a href="index.html">Ana səhifə</a>
+        <a href="terminallar.html">Terminallar</a>
+        <a href="emeliyyatlar.html">Əməliyyatlar</a>
+        <a href="isciler.html">İşçilər</a>
+        <a href="avtomobiller.html">Avtomobillər</a>
+        <a href="hesabatlar.html">Hesabatlar</a>
+        <a href="bot.html" aria-current="page">Bot jurnalı</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2>Bot jurnalı</h2>
+    <p class="izah">Hər gecə 23:55-də (Bakı vaxtı) bot bazaya yeni məlumat yazır: əməliyyatlar, inkassasiya, nasazlıq və təmir, işçilərin məzuniyyəti, avtomobillər, xərclər. Nəyin dəyişdiyi burada qeyd olunur. Təfərrüat üçün sətrə basın.</p>
+    <div id="bot"></div>
+  </main>
+  <footer>Tezöde Holding: ödəniş terminalları şəbəkəsi. Məlumat Supabase bazasından oxunur. Şirkət və məlumatlar nümunə üçündür. FİN və nömrələrin son simvolları gizlədilib.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (async () => {
+      const sira = await getData("bot");
+      document.getElementById("bot").innerHTML = sira.length
+        ? sira.map((j, i) => '<details class="jurnal"' + (i === 0 ? " open" : "") + '><summary><b>' + esc(j.gun) + '</b> · ' + esc(j.xulase) + '</summary><ul>'
+            + j.detallar.map((d) => '<li>' + esc(d) + '</li>').join("") + '</ul></details>').join("")
+        : '<p class="yuk">Hələ jurnal yoxdur.</p>';
+    })();
+  </script>
+</body>
+</html>
