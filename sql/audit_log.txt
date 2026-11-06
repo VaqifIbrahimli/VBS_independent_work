@@ -1,0 +1,9 @@
+CREATE TABLE audit_log (
+  id         BIGINT       NOT NULL,
+  istifadeci VARCHAR(100),
+  vaxt       TIMESTAMP    NOT NULL DEFAULT NOW(),
+  cedvel     VARCHAR(60)  NOT NULL,
+  emeliyyat  VARCHAR(10)  NOT NULL,
+  kohne      JSONB,
+  yeni       JSONB
+);

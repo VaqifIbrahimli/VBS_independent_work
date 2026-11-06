@@ -1,0 +1,8 @@
+CREATE TABLE nasazliq (
+  nasazliq_id    INT         NOT NULL,
+  terminal_id    INT         NOT NULL,
+  nov            VARCHAR(40) NOT NULL,
+  bildiris_vaxti TIMESTAMP   NOT NULL DEFAULT NOW(),
+  bildiren       VARCHAR(20) NOT NULL,
+  status         VARCHAR(20) NOT NULL DEFAULT 'Açıq'
+);

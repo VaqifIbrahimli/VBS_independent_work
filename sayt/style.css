@@ -1,0 +1,49 @@
+/* Tezöde Holding: çox sadə dizayn */
+:root { --ana: #1f3a5f; --acik: #eef2f8; --xett: #d9dee7; --metn: #222833; --sonuk: #6b7280; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, "Segoe UI", Arial, sans-serif; color: var(--metn); background: #fff; line-height: 1.5; }
+
+header { background: var(--ana); color: #fff; }
+.bas { max-width: 1100px; margin: 0 auto; padding: 14px 16px 0; }
+.bas h1 { margin: 0 0 8px; font-size: 20px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; }
+nav a { color: #dbe4f3; text-decoration: none; padding: 8px 12px; border-radius: 6px 6px 0 0; font-size: 15px; }
+nav a:hover { background: rgba(255, 255, 255, .12); }
+nav a[aria-current="page"] { background: #fff; color: var(--ana); font-weight: 600; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px; }
+h2 { margin: 0 0 6px; font-size: 24px; color: var(--ana); }
+h3 { margin: 28px 0 8px; font-size: 18px; color: var(--ana); }
+p.izah { margin: 0 0 18px; color: var(--sonuk); }
+
+.kartlar { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 18px 0; }
+.kart { background: var(--acik); border: 1px solid var(--xett); border-radius: 8px; padding: 14px 16px; }
+.kart span { display: block; font-size: 13px; color: var(--sonuk); }
+.kart b { font-size: 26px; color: var(--ana); }
+
+.alet { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--xett); border-radius: 6px; background: #fff; }
+input { min-width: 240px; }
+
+.cedvel { overflow-x: auto; border: 1px solid var(--xett); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 9px 12px; white-space: nowrap; }
+th { background: var(--acik); color: var(--ana); border-bottom: 1px solid var(--xett); }
+td { border-top: 1px solid #eef0f4; }
+td.say, th.say { text-align: right; }
+
+.etiket { display: inline-block; padding: 1px 9px; border-radius: 10px; font-size: 12px; background: #e6f4ea; color: #1b6b34; }
+.etiket.xeta { background: #fde8e8; color: #a12a2a; }
+.etiket.xəbər { background: #fff3d6; color: #8a5a00; }
+
+.zolaq { background: var(--acik); border-radius: 4px; height: 12px; min-width: 160px; }
+.zolaq i { display: block; height: 12px; border-radius: 4px; background: var(--ana); }
+
+.yuk { margin: 0; padding: 14px; color: var(--sonuk); }
+.xeta-qeyd { background: #fde8e8; border-color: #f0b4b4; color: #a12a2a; }
+ul.linkler { padding-left: 18px; }
+ul.linkler a { color: var(--ana); }
+footer { max-width: 1100px; margin: 0 auto; padding: 16px; color: var(--sonuk); font-size: 13px; border-top: 1px solid var(--xett); }
+.qeyd { background: #fff8e6; border: 1px solid #f0dca0; border-radius: 8px; padding: 10px 14px; font-size: 14px; margin: 14px 0; }
+
+@media (max-width: 600px) { .bas h1 { font-size: 17px; } th, td { padding: 8px; } input { min-width: 0; width: 100%; } }

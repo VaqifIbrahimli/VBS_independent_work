@@ -1,0 +1,7 @@
+CREATE TABLE terminal_yerdeyisme (
+  id             INT  NOT NULL,
+  terminal_id    INT  NOT NULL,
+  kohne_mekan_id INT,
+  yeni_mekan_id  INT  NOT NULL,
+  tarix          DATE NOT NULL DEFAULT CURRENT_DATE
+);

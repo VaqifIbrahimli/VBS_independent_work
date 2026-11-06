@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hesabatlar | Tezöde Holding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="bas">
+      <h1>Tezöde Holding</h1>
+      <nav>
+        <a href="index.html">Ana səhifə</a>
+        <a href="terminallar.html">Terminallar</a>
+        <a href="emeliyyatlar.html">Əməliyyatlar</a>
+        <a href="isciler.html">İşçilər</a>
+        <a href="avtomobiller.html">Avtomobillər</a>
+        <a href="hesabatlar.html" aria-current="page">Hesabatlar</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2>Hesabatlar</h2>
+    <p class="izah">Uğurlu əməliyyatlar əsasında hesablanmış sadə hesabatlar.</p>
+    <h3>Kateqoriya üzrə komissiya gəliri</h3>
+    <div class="cedvel" id="kateqoriya"></div>
+    <h3>Boşaldılmalı terminallar (kaset 80% və daha çox doludur)</h3>
+    <div class="cedvel" id="bosaldilmali"></div>
+  </main>
+  <footer>Tezöde Holding: ödəniş terminalları şəbəkəsi. Məlumat Supabase bazasından oxunur. Şirkət və məlumatlar nümunə üçündür (saxtadır). FİN və nömrələrin son simvolları gizlədilib.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (async () => {
+      const k = await getData("kateqoriya");
+      const maks = Math.max(...k.map((r) => r.komissiya));
+      cedvelYaz("kateqoriya", [
+        { bas: "Kateqoriya", deyer: (r) => r.kateqoriya }, { bas: "Dövriyyə", say: true, deyer: (r) => pul(r.dovriyye) },
+        { bas: "Komissiya", say: true, deyer: (r) => pul(r.komissiya) },
+        { bas: "", deyer: (r) => `<div class="zolaq"><i style="width:${(r.komissiya / maks) * 100}%"></i></div>` }], k);
+      cedvelYaz("bosaldilmali", [{ bas: "Terminal", deyer: (r) => r.terminal }, { bas: "Doluluq", say: true, deyer: (r) => r.doluluq + "%" }], await getData("bosaldilmali"));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+CREATE TABLE terminal_online_log (
+  id          BIGINT    NOT NULL,
+  terminal_id INT       NOT NULL,
+  vaxt        TIMESTAMP NOT NULL DEFAULT NOW(),
+  online      BOOLEAN   NOT NULL
+);

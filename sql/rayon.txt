@@ -1,0 +1,4 @@
+CREATE TABLE rayon (
+  rayon_id INT          NOT NULL,
+  ad       VARCHAR(100) NOT NULL
+);

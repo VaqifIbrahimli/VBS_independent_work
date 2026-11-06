@@ -1,0 +1,4 @@
+CREATE TABLE qebz (
+  qebz_nomresi VARCHAR(20) NOT NULL,
+  emeliyyat_id BIGINT      NOT NULL
+);

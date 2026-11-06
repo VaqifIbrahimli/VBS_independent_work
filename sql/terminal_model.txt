@@ -1,0 +1,7 @@
+CREATE TABLE terminal_model (
+  model_id     INT           NOT NULL,
+  istehsalci   VARCHAR(100)  NOT NULL,
+  model_adi    VARCHAR(100)  NOT NULL,
+  kaset_tutumu DECIMAL(12,2) NOT NULL,
+  zemanet_ay   INT           NOT NULL DEFAULT 12
+);

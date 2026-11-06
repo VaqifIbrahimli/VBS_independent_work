@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avtomobillər | Tezöde Holding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="bas">
+      <h1>Tezöde Holding</h1>
+      <nav>
+        <a href="index.html">Ana səhifə</a>
+        <a href="terminallar.html">Terminallar</a>
+        <a href="emeliyyatlar.html">Əməliyyatlar</a>
+        <a href="isciler.html">İşçilər</a>
+        <a href="avtomobiller.html" aria-current="page">Avtomobillər</a>
+        <a href="hesabatlar.html">Hesabatlar</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2>Avtomobillər</h2>
+    <p class="izah">Zirehli inkassasiya və texniki xidmət avtomobilləri.</p>
+    <div class="alet">
+      <input id="axtaris" type="search" placeholder="Axtar: DQN, model">
+      <select id="secim"><option value="">Bütün statuslar</option></select>
+    </div>
+    <p class="izah" id="say"></p>
+    <div class="cedvel" id="cedvel"></div>
+  </main>
+  <footer>Tezöde Holding: ödəniş terminalları şəbəkəsi. Məlumat Supabase bazasından oxunur. Şirkət və məlumatlar nümunə üçündür (saxtadır). FİN və nömrələrin son simvolları gizlədilib.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (async () => {
+      const sutunlar = [
+        { bas: "ID", deyer: (r) => r.id }, { bas: "DQN", deyer: (r) => r.dqn }, { bas: "Marka / Model", deyer: (r) => r.model },
+        { bas: "İl", deyer: (r) => r.il }, { bas: "Növ", deyer: (r) => r.nov }, { bas: "Status", deyer: (r) => etiket(r.status) }];
+      siyahi(sutunlar, await getData("avtomobiller"), ["dqn", "model"], "status");
+    })();
+  </script>
+</body>
+</html>

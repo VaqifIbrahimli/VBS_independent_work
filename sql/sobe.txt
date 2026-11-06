@@ -1,0 +1,4 @@
+CREATE TABLE sobe (
+  sobe_id INT         NOT NULL,
+  ad      VARCHAR(60) NOT NULL
+);

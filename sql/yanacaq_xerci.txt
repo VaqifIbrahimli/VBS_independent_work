@@ -1,0 +1,8 @@
+CREATE TABLE yanacaq_xerci (
+  id           INT           NOT NULL,
+  avtomobil_id INT           NOT NULL,
+  tarix        DATE          NOT NULL,
+  litr         DECIMAL(7,2)  NOT NULL,
+  mebleg       DECIMAL(10,2) NOT NULL,
+  surucu_id    INT
+);

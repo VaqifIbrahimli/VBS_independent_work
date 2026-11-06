@@ -1,0 +1,11 @@
+CREATE TABLE emeliyyat (
+  emeliyyat_id    BIGINT        NOT NULL,
+  terminal_id     INT           NOT NULL,
+  provayder_id    INT           NOT NULL,
+  abonent_nomresi VARCHAR(40)   NOT NULL,
+  mebleg          DECIMAL(10,2) NOT NULL,
+  komissiya       DECIMAL(10,2) NOT NULL DEFAULT 0,
+  usul_id         INT           NOT NULL,
+  tarix           TIMESTAMP     NOT NULL DEFAULT NOW(),
+  status          VARCHAR(20)   NOT NULL DEFAULT 'uğurlu'
+);

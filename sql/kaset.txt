@@ -1,0 +1,6 @@
+CREATE TABLE kaset (
+  kaset_id       INT           NOT NULL,
+  terminal_id    INT           NOT NULL,
+  tutum          DECIMAL(12,2) NOT NULL,
+  hazirki_mebleg DECIMAL(12,2) NOT NULL DEFAULT 0
+);

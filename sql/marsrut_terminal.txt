@@ -1,0 +1,5 @@
+CREATE TABLE marsrut_terminal (
+  marsrut_id  INT NOT NULL,
+  terminal_id INT NOT NULL,
+  ardicillig  INT NOT NULL
+);

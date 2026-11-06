@@ -1,0 +1,4 @@
+CREATE TABLE rol (
+  rol_id INT         NOT NULL,
+  ad     VARCHAR(30) NOT NULL
+);

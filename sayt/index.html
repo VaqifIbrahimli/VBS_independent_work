@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ana səhifə | Tezöde Holding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="bas">
+      <h1>Tezöde Holding</h1>
+      <nav>
+        <a href="index.html" aria-current="page">Ana səhifə</a>
+        <a href="terminallar.html">Terminallar</a>
+        <a href="emeliyyatlar.html">Əməliyyatlar</a>
+        <a href="isciler.html">İşçilər</a>
+        <a href="avtomobiller.html">Avtomobillər</a>
+        <a href="hesabatlar.html">Hesabatlar</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2>Ana səhifə</h2>
+    <p class="izah">Ödəniş terminalları şəbəkəsinin idarəetmə saytı: terminallar, əməliyyatlar, işçilər, avtomobillər və hesabatlar.</p>
+    <div class="kartlar" id="kartlar"></div>
+    <h3>Aylıq dövriyyə</h3>
+    <div class="cedvel" id="aylar"></div>
+    <h3>Bölmələr</h3>
+    <ul class="linkler">
+      <li><a href="terminallar.html">Terminallar</a>: yerləşdiyi məkan, rayon və vəziyyət</li>
+      <li><a href="emeliyyatlar.html">Əməliyyatlar</a>: son ödənişlər</li>
+      <li><a href="isciler.html">İşçilər</a>: transporter, texnik, nəzarətçi və s.</li>
+      <li><a href="avtomobiller.html">Avtomobillər</a>: DQN və vəziyyət</li>
+      <li><a href="hesabatlar.html">Hesabatlar</a>: kateqoriya üzrə gəlir, boşaldılmalı terminallar</li>
+    </ul>
+  </main>
+  <footer>Tezöde Holding: ödəniş terminalları şəbəkəsi. Məlumat Supabase bazasından oxunur. Şirkət və məlumatlar nümunə üçündür (saxtadır). FİN və nömrələrin son simvolları gizlədilib.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (async () => {
+      const s = await getData("say");
+      const kartlar = [["Terminal sayı", eded(s.terminal)], ["Aktiv terminal", eded(s.aktiv)], ["Əməliyyat sayı", eded(s.emeliyyat)], ["İşçi sayı", eded(s.isci)], ["Avtomobil sayı", eded(s.avtomobil)]];
+      document.getElementById("kartlar").innerHTML = kartlar.map(([a, d]) => `<div class="kart"><span>${a}</span><b>${d}</b></div>`).join("");
+      cedvelYaz("aylar", [{ bas: "Ay", deyer: (r) => r.ay }, { bas: "Dövriyyə", say: true, deyer: (r) => pul(r.dovriyye) }], await getData("aylar"));
+    })();
+  </script>
+</body>
+</html>

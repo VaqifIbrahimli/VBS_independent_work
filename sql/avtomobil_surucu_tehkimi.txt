@@ -1,0 +1,6 @@
+CREATE TABLE avtomobil_surucu_tehkimi (
+  id           INT  NOT NULL,
+  avtomobil_id INT  NOT NULL,
+  surucu_id    INT  NOT NULL,
+  tarix        DATE NOT NULL
+);
