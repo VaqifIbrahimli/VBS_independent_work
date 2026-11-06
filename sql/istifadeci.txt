@@ -1,0 +1,9 @@
+CREATE TABLE istifadeci (
+  istifadeci_id INT         NOT NULL,
+  isci_id       INT         NOT NULL,
+  login         VARCHAR(50) NOT NULL,
+  sifre_hash    TEXT,
+  rol_id        INT         NOT NULL,
+  son_giris     TIMESTAMP,
+  auth_user_id  UUID
+);

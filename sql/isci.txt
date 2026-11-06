@@ -1,0 +1,14 @@
+CREATE TABLE isci (
+  isci_id          INT          NOT NULL,
+  ad               VARCHAR(60)  NOT NULL,
+  soyad            VARCHAR(60)  NOT NULL,
+  ata_adi          VARCHAR(60),
+  fin              CHAR(7)      NOT NULL,
+  dogum_tarixi     DATE,
+  telefon          VARCHAR(30),
+  unvan            VARCHAR(250),
+  sobe_id          INT          NOT NULL,
+  vezife_id        INT          NOT NULL,
+  ise_qebul_tarixi DATE         NOT NULL DEFAULT CURRENT_DATE,
+  status           VARCHAR(20)  NOT NULL DEFAULT 'Aktiv'
+);

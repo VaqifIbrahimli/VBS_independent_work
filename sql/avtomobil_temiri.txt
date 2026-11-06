@@ -1,0 +1,8 @@
+CREATE TABLE avtomobil_temiri (
+  id           INT           NOT NULL,
+  avtomobil_id INT           NOT NULL,
+  tarix        DATE          NOT NULL,
+  gorulen_is   TEXT,
+  xerc         DECIMAL(10,2) NOT NULL DEFAULT 0,
+  yurus_km     INT
+);

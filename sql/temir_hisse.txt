@@ -1,0 +1,5 @@
+CREATE TABLE temir_hisse (
+  temir_id INT NOT NULL,
+  hisse_id INT NOT NULL,
+  say      INT NOT NULL
+);

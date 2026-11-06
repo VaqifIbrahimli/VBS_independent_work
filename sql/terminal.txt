@@ -1,0 +1,10 @@
+CREATE TABLE terminal (
+  terminal_id    INT         NOT NULL,
+  seriya_nomresi VARCHAR(50) NOT NULL,
+  model_id       INT         NOT NULL,
+  mekan_id       INT         NOT NULL,
+  status_id      INT         NOT NULL DEFAULT 1,
+  qoyulma_tarixi DATE        NOT NULL DEFAULT CURRENT_DATE,
+  ip_adres       VARCHAR(45),
+  sim_nomresi    VARCHAR(20)
+);

@@ -1,0 +1,10 @@
+CREATE TABLE avtomobil (
+  avtomobil_id  INT         NOT NULL,
+  dqn           VARCHAR(12) NOT NULL,
+  vin           VARCHAR(17) NOT NULL,
+  marka         VARCHAR(50) NOT NULL,
+  model         VARCHAR(50) NOT NULL,
+  buraxilis_ili INT,
+  nov           VARCHAR(30) NOT NULL,
+  status_id     INT         NOT NULL DEFAULT 1
+);

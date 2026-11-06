@@ -1,0 +1,11 @@
+CREATE TABLE mekan (
+  mekan_id      INT           NOT NULL,
+  rayon_id      INT           NOT NULL,
+  unvan         VARCHAR(250)  NOT NULL,
+  mekan_novu    VARCHAR(30)   NOT NULL,
+  en            DECIMAL(9,6),
+  uzunluq       DECIMAL(9,6),
+  icare_haqqi   DECIMAL(10,2) NOT NULL DEFAULT 0,
+  sahib_ad      VARCHAR(150),
+  sahib_telefon VARCHAR(30)
+);

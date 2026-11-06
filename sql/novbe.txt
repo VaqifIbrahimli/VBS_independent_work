@@ -1,0 +1,7 @@
+CREATE TABLE novbe (
+  id      INT  NOT NULL,
+  isci_id INT  NOT NULL,
+  tarix   DATE NOT NULL,
+  baslama TIME NOT NULL,
+  bitme   TIME NOT NULL
+);

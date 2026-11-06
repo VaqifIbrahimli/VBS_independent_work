@@ -1,0 +1,7 @@
+CREATE TABLE provayder (
+  provayder_id    INT          NOT NULL,
+  kateqoriya_id   INT          NOT NULL,
+  ad              VARCHAR(80)  NOT NULL,
+  komissiya_faizi DECIMAL(5,2) NOT NULL,
+  muqavile_tarixi DATE
+);

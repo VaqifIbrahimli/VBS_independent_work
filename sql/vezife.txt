@@ -1,0 +1,5 @@
+CREATE TABLE vezife (
+  vezife_id INT           NOT NULL,
+  ad        VARCHAR(80)   NOT NULL,
+  baza_maas DECIMAL(10,2) NOT NULL
+);

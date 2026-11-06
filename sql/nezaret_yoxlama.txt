@@ -1,0 +1,8 @@
+CREATE TABLE nezaret_yoxlama (
+  id           INT         NOT NULL,
+  terminal_id  INT         NOT NULL,
+  nezaretci_id INT         NOT NULL,
+  tarix        TIMESTAMP   NOT NULL DEFAULT NOW(),
+  netice       VARCHAR(30) NOT NULL,
+  qeyd         TEXT
+);

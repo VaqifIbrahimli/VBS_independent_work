@@ -1,0 +1,8 @@
+CREATE TABLE sigorta_texbaxis (
+  id           INT           NOT NULL,
+  avtomobil_id INT           NOT NULL,
+  nov          VARCHAR(20)   NOT NULL,
+  baslama      DATE          NOT NULL,
+  bitme        DATE          NOT NULL,
+  mebleg       DECIMAL(10,2) NOT NULL DEFAULT 0
+);

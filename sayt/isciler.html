@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İşçilər | Tezöde Holding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="bas">
+      <h1>Tezöde Holding</h1>
+      <nav>
+        <a href="index.html">Ana səhifə</a>
+        <a href="terminallar.html">Terminallar</a>
+        <a href="emeliyyatlar.html">Əməliyyatlar</a>
+        <a href="isciler.html" aria-current="page">İşçilər</a>
+        <a href="avtomobiller.html">Avtomobillər</a>
+        <a href="hesabatlar.html">Hesabatlar</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2>İşçilər</h2>
+    <p class="izah">Şirkət işçiləri. Nəzarətçi, transporter və texnik ayrıca cədvəldə deyil, vəzifə ilə fərqləndirilir.</p>
+    <div class="qeyd">FİN kodu və telefon nömrələrinin son simvolları <b>*</b> ilə gizlədilib.</div>
+    <div class="alet">
+      <input id="axtaris" type="search" placeholder="Axtar: ad, vəzifə, şöbə">
+      <select id="secim"><option value="">Bütün statuslar</option></select>
+    </div>
+    <p class="izah" id="say"></p>
+    <div class="cedvel" id="cedvel"></div>
+  </main>
+  <footer>Tezöde Holding: ödəniş terminalları şəbəkəsi. Məlumat Supabase bazasından oxunur. Şirkət və məlumatlar nümunə üçündür (saxtadır). FİN və nömrələrin son simvolları gizlədilib.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (async () => {
+      const sutunlar = [
+        { bas: "ID", deyer: (r) => r.id }, { bas: "Ad Soyad", deyer: (r) => r.ad }, { bas: "FİN", deyer: (r) => r.fin },
+        { bas: "Telefon", deyer: (r) => r.telefon }, { bas: "Şöbə", deyer: (r) => r.sobe }, { bas: "Vəzifə", deyer: (r) => r.vezife },
+        { bas: "Status", deyer: (r) => etiket(r.status) }];
+      siyahi(sutunlar, await getData("isciler"), ["ad", "vezife", "sobe"], "status");
+    })();
+  </script>
+</body>
+</html>

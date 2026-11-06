@@ -1,0 +1,4 @@
+CREATE TABLE xerc_novu (
+  xerc_novu_id INT         NOT NULL,
+  ad           VARCHAR(60) NOT NULL
+);

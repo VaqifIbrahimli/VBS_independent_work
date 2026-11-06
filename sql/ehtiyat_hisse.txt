@@ -1,0 +1,6 @@
+CREATE TABLE ehtiyat_hisse (
+  hisse_id    INT           NOT NULL,
+  ad          VARCHAR(100)  NOT NULL,
+  anbarda_say INT           NOT NULL DEFAULT 0,
+  qiymet      DECIMAL(10,2) NOT NULL
+);

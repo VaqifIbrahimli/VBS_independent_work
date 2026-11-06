@@ -1,0 +1,10 @@
+CREATE TABLE temir (
+  temir_id    INT           NOT NULL,
+  terminal_id INT           NOT NULL,
+  nasazliq_id INT,
+  texnik_id   INT           NOT NULL,
+  baslama     DATE          NOT NULL,
+  bitme       DATE,
+  gorulen_is  TEXT,
+  xerc        DECIMAL(10,2) NOT NULL DEFAULT 0
+);

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Əməliyyatlar | Tezöde Holding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="bas">
+      <h1>Tezöde Holding</h1>
+      <nav>
+        <a href="index.html">Ana səhifə</a>
+        <a href="terminallar.html">Terminallar</a>
+        <a href="emeliyyatlar.html" aria-current="page">Əməliyyatlar</a>
+        <a href="isciler.html">İşçilər</a>
+        <a href="avtomobiller.html">Avtomobillər</a>
+        <a href="hesabatlar.html">Hesabatlar</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h2>Əməliyyatlar</h2>
+    <p class="izah">Terminallarda edilən son ödənişlər. Abonent nömrəsinin son simvolları gizlədilib.</p>
+    <div class="alet">
+      <input id="axtaris" type="search" placeholder="Axtar: terminal, provayder">
+      <select id="secim"><option value="">Bütün statuslar</option></select>
+    </div>
+    <p class="izah" id="say"></p>
+    <div class="cedvel" id="cedvel"></div>
+  </main>
+  <footer>Tezöde Holding: ödəniş terminalları şəbəkəsi. Məlumat Supabase bazasından oxunur. Şirkət və məlumatlar nümunə üçündür (saxtadır). FİN və nömrələrin son simvolları gizlədilib.</footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    (async () => {
+      const sutunlar = [
+        { bas: "Tarix", deyer: (r) => r.tarix }, { bas: "Terminal", deyer: (r) => r.terminal }, { bas: "Provayder", deyer: (r) => r.provayder },
+        { bas: "Abonent", deyer: (r) => r.abonent }, { bas: "Məbləğ", say: true, deyer: (r) => pul(r.mebleg) },
+        { bas: "Komissiya", say: true, deyer: (r) => pul(r.komissiya) }, { bas: "Üsul", deyer: (r) => r.usul }, { bas: "Status", deyer: (r) => etiket(r.status) }];
+      siyahi(sutunlar, await getData("emeliyyatlar"), ["terminal", "provayder"], "status");
+    })();
+  </script>
+</body>
+</html>

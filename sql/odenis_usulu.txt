@@ -1,0 +1,4 @@
+CREATE TABLE odenis_usulu (
+  usul_id INT         NOT NULL,
+  ad      VARCHAR(30) NOT NULL
+);

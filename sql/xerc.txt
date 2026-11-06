@@ -1,0 +1,8 @@
+CREATE TABLE xerc (
+  xerc_id      INT           NOT NULL,
+  xerc_novu_id INT           NOT NULL,
+  terminal_id  INT,
+  avtomobil_id INT,
+  mebleg       DECIMAL(10,2) NOT NULL,
+  tarix        DATE          NOT NULL DEFAULT CURRENT_DATE
+);

@@ -1,0 +1,7 @@
+CREATE TABLE marsrut (
+  marsrut_id     INT          NOT NULL,
+  ad             VARCHAR(100) NOT NULL,
+  tarix          DATE         NOT NULL,
+  transporter_id INT          NOT NULL,
+  avtomobil_id   INT          NOT NULL
+);

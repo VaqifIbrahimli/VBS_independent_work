@@ -1,0 +1,8 @@
+CREATE TABLE maas_odenisi (
+  id      INT           NOT NULL,
+  isci_id INT           NOT NULL,
+  ay      DATE          NOT NULL,
+  mebleg  DECIMAL(10,2) NOT NULL,
+  bonus   DECIMAL(10,2) NOT NULL DEFAULT 0,
+  tutulma DECIMAL(10,2) NOT NULL DEFAULT 0
+);

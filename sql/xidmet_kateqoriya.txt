@@ -1,0 +1,4 @@
+CREATE TABLE xidmet_kateqoriya (
+  kateqoriya_id INT         NOT NULL,
+  ad            VARCHAR(60) NOT NULL
+);

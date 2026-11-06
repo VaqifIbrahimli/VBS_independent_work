@@ -1,0 +1,6 @@
+CREATE TABLE suruculuk_vesiqesi (
+  isci_id        INT         NOT NULL,
+  vesiqe_nomresi VARCHAR(20) NOT NULL,
+  kateqoriya     VARCHAR(10) NOT NULL,
+  bitme_tarixi   DATE        NOT NULL
+);

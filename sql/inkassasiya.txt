@@ -1,0 +1,11 @@
+CREATE TABLE inkassasiya (
+  inkassasiya_id   INT           NOT NULL,
+  terminal_id      INT           NOT NULL,
+  tarix            TIMESTAMP     NOT NULL DEFAULT NOW(),
+  transporter_id   INT           NOT NULL,
+  avtomobil_id     INT           NOT NULL,
+  goturulen_mebleg DECIMAL(12,2) NOT NULL,
+  sayilan_mebleg   DECIMAL(12,2),
+  ferq             DECIMAL(12,2),
+  kassir_id        INT
+);
