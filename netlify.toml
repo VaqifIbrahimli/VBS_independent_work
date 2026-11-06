@@ -1,0 +1,3 @@
+# Netlify: sayt "sayt" qovluğundan yayımlanır, build əmri yoxdur (statik sayt)
+[build]
+  publish = "sayt"
