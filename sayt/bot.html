@@ -37,7 +37,7 @@
     (async () => {
       const sira = await getData("bot");
       document.getElementById("bot").innerHTML = sira.length
-        ? sira.map((j, i) => '<details class="jurnal"' + (i === 0 ? " open" : "") + '><summary><b>' + esc(j.gun) + '</b> · ' + esc(j.xulase) + '</summary><ul>'
+        ? sira.map((j, i) => '<details class="jurnal"' + (i === 0 ? " open" : "") + '><summary><b>' + esc(j.gun) + '</b> · ' + (j.menbe === 'widget' ? '<span class="etiket xəbər">widget</span> ' : '') + esc(j.xulase) + '</summary><ul>'
             + j.detallar.map((d) => '<li>' + esc(d) + '</li>').join("") + '</ul></details>').join("")
         : '<p class="yuk">Hələ jurnal yoxdur.</p>';
     })();

@@ -32,7 +32,7 @@ async function getData(ad) {
       return { terminal, aktiv, emeliyyat, isci, avtomobil };
     }
     case "bot":
-      return oxu("bot_jurnal?select=gun,vaxt,xulase,detallar&order=id.desc&limit=30");
+      return oxu("bot_jurnal?select=gun,vaxt,xulase,detallar,menbe&order=id.desc&limit=30");
     case "aylar":
       return funksiya("sayt_aylar");
     case "kateqoriya":
