@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giriş | Tezöde Holding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="giris-sehife">
+  <form class="giris-kart" id="forma">
+    <h1>Tezöde Holding</h1>
+    <p>Sistemə giriş</p>
+    <label>İstifadəçi adı
+      <input id="ad" type="text" autocomplete="username" required autofocus>
+    </label>
+    <label>Şifrə
+      <input id="sifre" type="password" autocomplete="current-password" required>
+    </label>
+    <button type="submit">Daxil ol</button>
+    <p class="demo">Demo giriş: istənilən istifadəçi adı və şifrə ilə daxil olmaq olar.</p>
+  </form>
+  <script>
+    document.getElementById("forma").addEventListener("submit", function (e) {
+      e.preventDefault();
+      sessionStorage.setItem("giris", document.getElementById("ad").value.trim());
+      location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

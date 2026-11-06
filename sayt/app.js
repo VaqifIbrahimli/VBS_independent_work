@@ -59,6 +59,14 @@ async function getData(ad) {
   }
 }
 
+// Menyuda istifadəçi adı və "Çıxış"
+document.addEventListener("DOMContentLoaded", () => {
+  const ad = sessionStorage.getItem("giris");
+  const el = document.getElementById("istAd");
+  if (el && ad) el.textContent = ad;
+  document.getElementById("cixis")?.addEventListener("click", () => sessionStorage.removeItem("giris"));
+});
+
 // Yüklənərkən yazı, xəta olarsa göstərmək
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".cedvel, #kartlar").forEach((e) => (e.innerHTML = '<p class="yuk">Yüklənir…</p>'));
