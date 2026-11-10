@@ -18,8 +18,12 @@ Tezöde Holding ödəniş terminalları şəbəkəsinin verilənlər bazası (38
 `sayt/index.html` faylını brauzerdə açın (internet lazımdır). Sayt məlumatı birbaşa Supabase bazasından oxuyur:
 `sayt/config.js` bağlantı ünvanını və yalnız oxumaq üçün açıq (publishable) açarı saxlayır, `sayt/app.js` içindəki `getData()` isə sorğuları göndərir.
 Bazada anonim istifadəçi yalnız oxuya bilər, yazma və silmə icazəsi yoxdur.
-Giriş səhifəsi bazadakı `istifadeci` cədvəlinə baxır: istifadəçi orada olmalı və rolu `Super admin` olmalıdır.
-Demo hesab: istifadəçi adı `111`, şifrə `111` (şifrə bazada bcrypt hash kimi də saxlanılır). Bu həqiqi təhlükəsizlik deyil, saytın giriş görünüşüdür: məlumat yalnız oxumaq üçün açıqdır.
+Giriş səhifəsi bazadakı `istifadeci` cədvəlinə baxır: istifadəçi orada olmalı və rolu icazəli olmalıdır (`Super admin` və ya `Baş admin`).
+İki hesab var:
+- **Demo hesab** (`Super admin`): istifadəçi adı `111`, şifrə `111`. "Hesabatlar" və "Bot jurnalı" səhifələri bu hesabdan gizlədilib (`sayt/giris.js`-də `QADAGAN`).
+- **Gizli hesab** (`Baş admin`): bütün səhifələri görür. Şifrəsi kodda yazılmır, yalnız yavaş hash (PBKDF2-SHA256, 300 000 dövr) saxlanılır.
+
+Bu həqiqi server təhlükəsizliyi deyil, saytın giriş görünüşüdür: məlumat yalnız oxumaq üçün açıqdır.
 Hesabatlar üçün bazada 3 oxuma funksiyası var: `sayt_aylar()`, `sayt_kateqoriya()`, `sayt_bosaldilmali()`.
 
 ## Verilənlər bazası
