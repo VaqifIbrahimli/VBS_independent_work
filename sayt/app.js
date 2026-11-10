@@ -65,7 +65,13 @@ async function getData(ad) {
 document.addEventListener("DOMContentLoaded", () => {
   const ad = sessionStorage.getItem("giris");
   const el = document.getElementById("istAd");
-  if (el && ad) el.textContent = ad + " · " + (sessionStorage.getItem("rol") || "");
+  const rol = sessionStorage.getItem("rol") || "";
+  if (el && ad) el.textContent = ad + " · " + rol;
+  // Rolun görməməli olduğu səhifələrin linkləri (menyu və siyahılar) silinir
+  const gizli = QADAGAN[rol] || [];
+  document.querySelectorAll("a[href]").forEach((a) => {
+    if (gizli.includes(sehifeAdi(new URL(a.getAttribute("href"), location.href).pathname))) (a.closest("li") || a).remove();
+  });
   document.getElementById("cixis")?.addEventListener("click", () => sessionStorage.removeItem("giris"));
 });
 
