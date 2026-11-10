@@ -16,15 +16,11 @@
     <label>Şifrə
       <input id="sifre" type="password" autocomplete="current-password" required>
     </label>
-    <button type="submit">Daxil ol</button>
-    <p class="demo">Demo giriş: istənilən istifadəçi adı və şifrə ilə daxil olmaq olar.</p>
+    <p class="giris-xeta" id="xeta" hidden></p>
+    <button type="submit" id="dugme">Daxil ol</button>
+    <p class="demo">Demo hesab (Super admin): istifadəçi adı <b>111</b>, şifrə <b>111</b>. İstifadəçi bazadakı istifadəçilər cədvəlindən yoxlanılır.</p>
   </form>
-  <script>
-    document.getElementById("forma").addEventListener("submit", function (e) {
-      e.preventDefault();
-      sessionStorage.setItem("giris", document.getElementById("ad").value.trim());
-      location.href = "index.html";
-    });
-  </script>
+  <script src="config.js"></script>
+  <script src="login.js"></script>
 </body>
 </html>

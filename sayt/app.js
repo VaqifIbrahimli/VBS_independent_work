@@ -65,7 +65,7 @@ async function getData(ad) {
 document.addEventListener("DOMContentLoaded", () => {
   const ad = sessionStorage.getItem("giris");
   const el = document.getElementById("istAd");
-  if (el && ad) el.textContent = ad;
+  if (el && ad) el.textContent = ad + " · " + (sessionStorage.getItem("rol") || "");
   document.getElementById("cixis")?.addEventListener("click", () => sessionStorage.removeItem("giris"));
 });
 
